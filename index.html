@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" 
+    content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+  <nav class="navbar bg-secondary" id="header">
+    <h1 class="h5 text-light">Sample-editors</h1>
+  </nav>
+  <div class="row m-0" id="content">
+    <div class="col-12 col-sm-4 col-md-3 col-lg-2 m-0" id="sidebar">*sidebar*</div>
+    <div class="col-12 col-sm-8 col-md-9 col-lg-10 m-0" id="editor_area"></div>
+  </div>
+  <div class="row m-0" id="footer">* this is footer. *</div>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="editor.js"></script>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="save-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Save</h5>
+        </div>
+        <div class="modal-body">
+          <p>Save file name:</p>
+          <input type="text" class="form-control" id="input_file_name">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="createfileresult()">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="find-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Find</h5>
+        </div>
+        <div class="modal-body">
+          <p>find string:</p>
+          <input type="text" class="form-control" id="input_find">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="search()">Find</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" tabindex="-1" role="dialog" id="replace-modal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Find</h5>
+        </div>
+        <div class="modal-body">
+          <p>find and replace string:</p>
+          <input type="text" class="form-control mb-2" id="input_find2">
+          <input type="text" class="form-control" id="input_replace">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="replacenow()">Replace</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
